@@ -19,7 +19,7 @@ const Select = ({
     // ajout du parametre newvalue à onChange
     onChange(newValue);
     setValue(newValue);
-    // setCollapsed(newValue);
+    // modification paramètre
     setCollapsed(!collapsed);
   };
   return (

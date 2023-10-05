@@ -17,12 +17,12 @@ const Page = () => {
 
   const { data } = useData();
 
-  const lastProjectCopy = data?.events.slice();
+  // on se sert de la meme focntion du slider pour implémenter last
+  const events = data?.events;
+  const byDateDesc = events?.sort((evtA, evtB) => 
+  new Date(evtA.date) > new Date(evtB.date) ? -1 : 1);
+  const last = byDateDesc?.[0];
 
-  const sortedProject = lastProjectCopy?.sort((EventA, EventB) => 
-  new Date(EventB.date) - new Date(EventA.date));
-
-  const last = sortedProject?.[0];
   return <>
     <header>
       <Menu />
